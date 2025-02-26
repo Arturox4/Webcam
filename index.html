@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webcam en Vivo - Antofagasta</title>
+    <title>La Cúpula</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -20,6 +20,18 @@
             justify-content: center;
             align-items: center;
             background: black;
+        }
+        .banner {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            z-index: 10;
         }
         .video-container {
             width: 100vw;
@@ -53,6 +65,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="banner">La Cúpula - Webcam en Vivo</div>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/link?autoplay=1&controls=0&modestbranding=1&rel=0" allowfullscreen></iframe>
         </div>
