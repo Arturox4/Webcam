@@ -6,33 +6,56 @@
     <title>Webcam en Vivo - Antofagasta</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef2f3;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
+            max-width: 900px;
+            margin: 40px auto;
             background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
         }
-        iframe {
+        h1 {
+            color: #0077b6;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #555;
+            font-size: 18px;
+        }
+        .video-container {
+            position: relative;
             width: 100%;
-            height: 450px;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
         }
         .ad-container {
             margin-top: 20px;
-            min-height: 100px;
-            background: #ddd;
+            min-height: 120px;
+            background: #f8f9fa;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #555;
+            color: #666;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -41,14 +64,13 @@
         <h1>Webcam en Vivo - Antofagasta</h1>
         <p>Disfruta de la vista en tiempo real de la playa.</p>
         
-        <!-- Inserta aquí el link del streaming de YouTube cuando lo tengas -->
-        <iframe src="https://www.youtube.com/embed/link" allowfullscreen></iframe>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/link" allowfullscreen></iframe>
+        </div>
         
-        <!-- Espacio para anuncios -->
         <div class="ad-container">
-            <p>Espacio para anuncios</p>
+            <p>Espacio publicitario</p>
         </div>
     </div>
 </body>
 </html>
-
