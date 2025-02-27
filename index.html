@@ -25,7 +25,7 @@
             justify-content: center;
             align-items: center;
             background: black;
-            position: relative; /* Added */
+            position: relative;
         }
         .banner {
             position: absolute;
@@ -37,14 +37,14 @@
             font-size: 24px;
             font-weight: bold;
             color: #333;
-            z-index: 20; /* Adjusted */
+            z-index: 20;
         }
         .video-container {
             width: 100vw;
             height: 100vh;
             position: relative;
-            margin-top: 60px; /* Added margin-top */
-            margin-bottom: 80px; /* Added margin-bottom */
+            margin-top: 60px;
+            margin-bottom: 80px;
         }
         .video-container iframe {
             position: absolute;
@@ -53,13 +53,13 @@
             width: 100%;
             height: 100%;
             border: none;
-            pointer-events: none; /* Evita clics en el video */
+            pointer-events: none;
         }
         .ad-container {
             position: absolute;
             bottom: 0;
             width: 100%;
-            height: 80px;
+            min-height: 90px; /* Asegura espacio suficiente para el anuncio */
             background: rgba(255, 255, 255, 0.9);
             display: flex;
             align-items: center;
@@ -67,7 +67,7 @@
             color: #333;
             font-size: 18px;
             font-weight: bold;
-            z-index: 20; /* Adjusted */
+            z-index: 20;
         }
     </style>
 </head>
@@ -75,7 +75,7 @@
     <div class="container">
         <div class="banner">La Cúpula - Webcam en Vivo - Antofagasta</div>
         <div class="video-container">
-            <!-- Inserta el iframe con el stream de Dacast. El atributo 'muted' no funciona en iframes, por lo que el audio debe deshabilitarse desde la fuente -->
+            <!-- Inserta el iframe con el stream de Dacast. -->
             <iframe src="https://iframe.dacast.com/live/df2106ca-d857-1960-9706-e3f05fc28e1b/68bcb50a-3af8-5695-9771-986ce9a56c16" 
                 allowfullscreen frameborder="0"></iframe>
         </div>
@@ -88,7 +88,11 @@
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
             <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                window.onload = function() {
+                    setTimeout(function() {
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    }, 1000); // Da tiempo a que la página cargue
+                };
             </script>
         </div>
     </div>
