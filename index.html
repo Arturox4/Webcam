@@ -89,15 +89,14 @@
                 data-full-width-responsive="true"></ins>
             <script>
                 window.onload = function() {
-                    const adContainer = document.getElementById('ad-container');
-                    if (adContainer && adContainer.offsetWidth > 0) {
-                        setTimeout(function() {
+                    setTimeout(function() {
+                        if (document.getElementById('ad-container').offsetWidth > 0) {
                             (adsbygoogle = window.adsbygoogle || []).push({});
                             console.log("Anuncio cargado correctamente.");
-                        }, 1000); // Da tiempo a que la página cargue
-                    } else {
-                        console.log("Error: El contenedor del anuncio tiene un ancho de 0.");
-                    }
+                        } else {
+                            console.log("Error: El contenedor del anuncio tiene un ancho de 0.");
+                        }
+                    }, 1500); // Se da tiempo a la carga completa de la página
                 };
             </script>
         </div>
