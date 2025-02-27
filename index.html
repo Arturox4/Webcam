@@ -72,10 +72,12 @@
     <div class="container">
         <div class="banner">La Cúpula - Webcam en Vivo - Antofagasta</div>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/Am9QWOir8iM?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1" 
+            <!-- Inserta el iframe con el stream de Dacast. El atributo 'muted' no funciona en iframes, por lo que el audio debe deshabilitarse desde la fuente -->
+            <iframe src="https://iframe.dacast.com/live/df2106ca-d857-1960-9706-e3f05fc28e1b/68bcb50a-3af8-5695-9771-986ce9a56c16" 
                 allowfullscreen frameborder="0"></iframe>
         </div>
         <div class="ad-container">
+            <!-- Contenedor para anuncios de Google AdSense -->
             <ins class="adsbygoogle"
                 style="display:block"
                 data-ad-client="ca-pub-1983399518273619"
