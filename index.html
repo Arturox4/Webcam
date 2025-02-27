@@ -25,6 +25,7 @@
             justify-content: center;
             align-items: center;
             background: black;
+            position: relative; /* Added */
         }
         .banner {
             position: absolute;
@@ -36,12 +37,14 @@
             font-size: 24px;
             font-weight: bold;
             color: #333;
-            z-index: 10;
+            z-index: 20; /* Adjusted */
         }
         .video-container {
             width: 100vw;
             height: 100vh;
             position: relative;
+            margin-top: 60px; /* Added margin-top */
+            margin-bottom: 80px; /* Added margin-bottom */
         }
         .video-container iframe {
             position: absolute;
@@ -64,7 +67,7 @@
             color: #333;
             font-size: 18px;
             font-weight: bold;
-            z-index: 10;
+            z-index: 20; /* Adjusted */
         }
     </style>
 </head>
