@@ -1,18 +1,16 @@
-
 <style>
     body {
         background-color: #212529; 
         margin: 0;
         padding: 0;
-        height: 100vh;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
     }
-</style>
-    
-<style>
+
     .titulo {
-        color: #343A40 ;
+        color: #343A40;
         font-family: sans-serif;
         background-color: #CED4DA;
         padding-top: 12px;
@@ -21,8 +19,8 @@
         width: 100%;
         margin: 0;
         margin-bottom: 0;
-        }
-        
+    }
+
     .iframe-wrapper {
         background-color: black; 
         padding: 2vw; 
@@ -31,7 +29,7 @@
         padding-bottom: 0%;
     }
 
-    .iframe{
+    .iframe {
         width: 90vw;
         height: 50vw;
         aspect-ratio: 16/9;
@@ -41,12 +39,35 @@
         padding-left: 3%;
         padding-right: 3%;
     }
+
+    .espacio-publicitario {
+        background-color: #343A40;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 0;
+        font-family: sans-serif;
+        height: 140px;
+        margin-top: 1rem;
+    }
+
+    .widget-container {
+        width: 100%;
+        margin-top: 1rem; /* Espacio entre el espacio publicitario y el widget */
+        display: flex;
+        justify-content: center;
+    }
+
+    .widget-container iframe {
+        width: 100%; /* Hace que el iframe ocupe todo el ancho disponible */
+        height: 300px; /* Ajusta la altura del widget como desees */
+        border: none;
+    }
 </style>
 
 <h1 class="titulo">
     La Cúpula Antofagasta - Webcam en vivo
 </h1>
-
 
 <div>
     <div class="iframe-wrapper">
@@ -55,4 +76,15 @@
           src="https://www.youtube.com/embed/jfKfPfyJRdk">
         </iframe>
     </div>
+</div>
+
+<div class="espacio-publicitario">
+    <p>Espacio para publicidad</p>
+    <p>Contáctanos para más información</p>
+    <p>+56 9 6768 8752</p>
+</div>
+
+<!-- Contenedor del widget -->
+<div class="widget-container">
+    <iframe class="surf-fc-i" allowtransparency="true" src="//www.surf-forecast.com/breaks/Cupula/forecasts/widget/a" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe>
 </div>
