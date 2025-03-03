@@ -63,7 +63,7 @@
         height: 300px; 
         border: none;
     }
-    donation-Buton {
+    .donation-Button {
         background-color: #f8b400;
         color: black;
         border: none;
@@ -74,8 +74,9 @@
         border-radius: 5px;
         margin: 20px auto;
         display: block;
+        
     }
-    .donation-Buton:hover {
+    .donation-Button:hover {
         background-color: #e0a800;
     }
     .modal {
@@ -112,11 +113,30 @@
         text-decoration: none;
         border-radius: 5px;
         margin-top: 10px;
+        cursor: pointer;
     }
     .donate-link:hover {
         background-color: #218838;
     }
+
 </style>
+
+<script>
+    function openModal() {
+        document.getElementById("donationModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("donationModal").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById("donationModal");
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
 
 <h1 class="titulo">
     La Cúpula Antofagasta - Webcam en vivo
@@ -136,7 +156,7 @@
     <p>Contáctanos para más información</p>
     <p>+56 9 6768 8752</p>
 </div>
-<button class="donation-btn" onclick="openModal()">Apóyanos con una donación</button>
+<button class="donation-Button" onclick="openModal()">Apóyanos con una donación</button>
 
 <div id="donationModal" class="modal">
     <div class="modal-content">
@@ -151,19 +171,3 @@
     <iframe class="surf-fc-i" allowtransparency="true" src="//www.surf-forecast.com/breaks/Cupula/forecasts/widget/a" scrolling="no" frameborder="0" marginwidth="0" marginheight="0"></iframe>
 </div>
 
-<script>
-    function openModal() {
-        document.getElementById("donationModal").style.display = "block";
-    }
-
-    function closeModal() {
-        document.getElementById("donationModal").style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        var modal = document.getElementById("donationModal");
-        if (event.target === modal) {
-            modal.style.display = "none";
-        }
-    };
-</script>
