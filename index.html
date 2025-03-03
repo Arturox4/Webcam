@@ -53,14 +53,14 @@
 
     .widget-container {
         width: 100%;
-        margin-top: 1rem; /* Espacio entre el espacio publicitario y el widget */
+        margin-top: 1rem; 
         display: flex;
         justify-content: center;
     }
 
     .widget-container iframe {
-        width: 100%; /* Hace que el iframe ocupe todo el ancho disponible */
-        height: 300px; /* Ajusta la altura del widget como desees */
+        width: 100%; 
+        height: 300px; 
         border: none;
     }
     donation-Buton {
@@ -160,7 +160,6 @@
         document.getElementById("donationModal").style.display = "none";
     }
 
-    // Close modal when clicking outside of it
     window.onclick = function(event) {
         var modal = document.getElementById("donationModal");
         if (event.target === modal) {
