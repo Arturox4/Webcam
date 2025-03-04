@@ -1,5 +1,16 @@
+
+
+
+
+
+
+
 <style>
+    
+    
+    
     body {
+        
         background-color: #212529; 
         margin: 0;
         padding: 0;
@@ -19,6 +30,7 @@
         width: 100%;
         margin: 0;
         margin-bottom: 0;
+
     }
 
     .iframe-wrapper {
@@ -118,7 +130,51 @@
     .donate-link:hover {
         background-color: #218838;
     }
+    
+    
+    @media (max-width: 768px) {
+    .titulo {
+        font-size: 22px; /* Aumentar tamaño del título */
+        padding: 15px 10px;
+    }
 
+    .espacio-publicitario {
+        font-size: 16px; /* Aumentar tamaño del texto */
+        height: auto; /* Dejar que crezca según el contenido */
+        padding: 1.5rem;
+    }
+
+    .donation-Button {
+        font-size: 20px; /* Aumentar tamaño del botón */
+        padding: 15px;
+        width: 80%; /* Hacerlo más grande */
+    }
+
+    .modal-content {
+        width: 80%; /* Hacer el modal más ancho */
+        font-size: 18px;
+    }
+
+    .donate-link {
+        font-size: 20px; /* Aumentar tamaño del botón de donación */
+        padding: 12px 20px;
+    }
+
+    .iframe {
+        width: 95vw; /* Usar casi todo el ancho */
+        height: 55vw; /* Ajustar altura manteniendo proporción */
+    }
+
+    .widget-container iframe {
+        height: 280px; /* Hacer el widget más alto */
+    }
+    .iframe-wrapper {
+        flex-direction: column;
+        align-items: center;
+
+    }
+}
+    
 </style>
 
 <script>
@@ -163,7 +219,7 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <h2>Haz una donación</h2>
         <p>Tu apoyo nos ayuda a mantener este servicio.</p>
-        <a href="https://www.paypal.com/donate/?hosted_button_id=DC8Z2NA3AURCE" target="_blank" class="donate-link">Donar Ahora</a>
+        <a href="https://www.paypal.com/donate/?hosted_button_id=WYUTKGZ39SE4G" target="_blank" class="donate-link">Donar Ahora</a>
     </div>
 </div>
 
