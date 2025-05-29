@@ -37,6 +37,9 @@
       background-color: black;
       display: flex;
       justify-content: center;
+      overflow: hidden; /* 👈 hides the parts of the iframe that go outside the wrapper */
+      height: 45vw; /* 👈 set a fixed height to control visible area (can be adjusted) */
+      position: relative; /* 👈 required for transform origin to work predictably */
     }
 
     .iframe {
@@ -47,6 +50,8 @@
       max-height: 90vh;
       border: none;
       pointer-events: none;
+      transform: scale(1.26); /* 👈 zooms in the iframe */
+      transform-origin: top center; /* 👈 zoom starts from top center */
     }
 
     .espacio-publicitario {
