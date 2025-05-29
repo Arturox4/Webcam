@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Cúpula - Webcam en Vivo</title>
+
+  <style>
+    body {
+      background-color: #212529;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .titulo {
+      display: flex;
+      align-items: center;
+      color: #343a40;
+      font-family: sans-serif;
+      background-color: #ced4da;
+      padding: 12px 10px;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+    }
+
+    .iframe-wrapper {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      overflow: hidden; /* 👈 hides the parts of the iframe that go outside the wrapper */
+      height: 45vw; /* 👈 set a fixed height to control visible area (can be adjusted) */
+      position: relative; /* 👈 required for transform origin to work predictably */
+    }
+
+    .iframe {
+      width: 80vw;
+      height: 45vw;
+      aspect-ratio: 16/9;
+      max-width: 100%;
+      max-height: 90vh;
+      border: none;
+      pointer-events: none;
+      transform: scale(1.26); /* 👈 zooms in the iframe */
+      transform-origin: top center; /* 👈 zoom starts from top center */
+    }
+
+    .espacio-publicitario {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-family: sans-serif;
+      height: 200px;
+      margin-top: 1rem;
+    }
+
+    .widget-container {
+      width: 100%;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .widget-container iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+
+    .donation-Button {
+      background-color: #f8b400;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      font-family: sans-serif;
+      cursor: pointer;
+      border-radius: 5px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .donation-Button:hover {
+      background-color: #e0a800;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+    .close {
+      color: red;
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .donate-link {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .donate-link:hover {
+      background-color: #218838;
+    }
+
+    @media (max-width: 768px) {
+      .titulo {
+        font-size: 22px;
+        padding: 15px 10px;
+      }
+
+      .logo {
+        height: 40px;
+      }
+
+      .espacio-publicitario {
+        font-size: 16px;
+        height: auto;
+        padding: 1.5rem;
+      }
+
+      .donation-Button {
+        font-size: 20px;
+        padding: 15px;
+        width: 80%;
+      }
+
+      .modal-content {
+        width: 80%;
+        font-size: 18px;
+      }
+
+      .donate-link {
+        font-size: 20px;
+        padding: 12px 20px;
+      }
+
+      .iframe {
+        width: 95vw;
+        height: 55vw;
+        pointer-events: all
+      }
+
+      .widget-container iframe {
+        height: 280px;
+      }
+
+      .iframe-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+
+  <script>
+    function openModal() {
+      document.getElementById("donationModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("donationModal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      var modal = document.getElementById("donationModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+  <h1 class="titulo">
+    <img src="logo.PNG" alt="Logo" class="logo" />
+    La Cúpula Surfcam
+  </h1>
+
+  <div class="iframe-wrapper">
+    <iframe
+      class="iframe"
+      src="https://rtsp.me/embed/fy3is9sZ/"
+      allow="autoplay; encrypted-media"
+      title="La Cúpula en Vivo"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="espacio-publicitario">
+    <p>Espacio para publicidad</p>
+    <p>Contáctanos para más información</p>
+    <p>+56 9 6768 8752</p>
+  </div>
+
+  <div class="widget-container">
+    <iframe
+      class="surf-fc-i"
+      allowtransparency="true"
+      src="//www.surf-forecast.com/breaks/Cupula/forecasts/widget/a"
+      scrolling="no"
+      frameborder="0"
+      marginwidth="0"
+      marginheight="0"
+    ></iframe>
+  </div>
+
+  <button class="donation-Button" onclick="openModal()">Apóyanos con una donación</button>
+
+  <div id="donationModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Haz una donación</h2>
+      <p>Tu apoyo nos ayuda a mantener este servicio.</p>
+      <a
+        href="https://www.paypal.com/donate/?hosted_button_id=WYUTKGZ39SE4G"
+        target="_blank"
+        class="donate-link"
+        >Donar Ahora</a
+      >
+    </div>
+  </div>
+</body>
+</html>
