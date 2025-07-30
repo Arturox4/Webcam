@@ -33,6 +33,13 @@
       height: 60px;
       width: auto;
     }
+      #timer {
+      color: white;
+      text-align: center;
+      font-size: 24px;
+      font-family: sans-serif;
+      margin: 20px;
+      }
 
     .iframe-wrapper {
       background-color: black;
@@ -202,6 +209,45 @@
         modal.style.display = "none";
       }
     };
+    let timeLeft = 6300;
+
+    function formatTime(seconds) {
+      const h = Math.floor(seconds / 3600);
+      const m = Math.floor((seconds % 3600) / 60);
+      const s = seconds % 60;
+      return [h, m, s]
+        .map(unit => unit.toString().padStart(2, '0'))
+        .join(':');
+    }
+
+    function updateTimer() {
+      const countdownEl = document.getElementById('countdown');
+      if (countdownEl) {
+        countdownEl.textContent = formatTime(timeLeft);
+      }
+
+      if (timeLeft > 0) {
+        timeLeft--;
+      } else {
+        clearInterval(timerInterval);
+        alert("¡El tiempo ha terminado!");
+      }
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+
+<body>
+  <h1 class="titulo">
+    <img src="logo.PNG" alt="Logo" class="logo" />
+    La Cúpula Webcam
+  </h1>
+
+  <div id="timer">
+    Tiempo restante: <span id="countdown">01:45:00</span>
+  </div>
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
